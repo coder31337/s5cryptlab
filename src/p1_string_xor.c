@@ -5,10 +5,11 @@ int main() {
     char string[] = "hello world";
     int len = strlen(string);
     char xor_string[len];
+    int i;
 
-    for (int i = 0; i < len; i++)
+    for (i = 0; i < len; i++)
         xor_string[i] = string[i] ^ 0;
-    for (int i = 0; i < len; i++)
+    for (i = 0; i < len; i++)
         printf("%c", xor_string[i]);
     printf("\n");
 
