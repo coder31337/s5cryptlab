@@ -7,9 +7,9 @@ int main() {
     char xor_string[len];
 
     for (int i = 0; i < len; i++)
-        xor_string[i] = string[i] ^ 'o';
+        xor_string[i] = string[i] ^ 0;
     for (int i = 0; i < len; i++)
-        printf("%d ", xor_string[i]);
+        printf("%c", xor_string[i]);
     printf("\n");
 
     return 0;
