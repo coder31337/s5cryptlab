@@ -1,0 +1,3 @@
+Enter a string: That ever lived in the tide of times                
+Enter a key: -3
+Cipher is QEXQ_BSBO_IFSBA_FK_QEB_QFAB_LC_QFJBP
