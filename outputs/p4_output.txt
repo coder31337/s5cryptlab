@@ -1,0 +1,3 @@
+Enter a message: How are you
+Ciphertext is EWPAAJIFH
+Key is DYZARNQLT
