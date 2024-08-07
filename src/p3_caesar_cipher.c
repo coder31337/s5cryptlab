@@ -5,7 +5,7 @@
 
 int main() {
     char message[BUF], plaintext[BUF], ciphertext[BUF];
-    int key, len, i;
+    int key, len, i, pi, ci;
 
     printf("Enter a message: ");
     fgets(message, BUF, stdin);
@@ -19,8 +19,11 @@ int main() {
     }
     plaintext[len] = '\0';
 
-    for (i = 0; i < len; i++)
-        ciphertext[i] = (char)((plaintext[i] - 'A' + key) % 26) + 'A';
+    for (i = 0; i < len; i++) {
+        pi = plaintext[i] - 'A';
+        ci = (pi + key) % 26;
+        ciphertext[i] = (char)ci + 'A';
+    }
     ciphertext[len] = '\0';
 
     printf("Ciphertext is %s\n", ciphertext);
