@@ -1,0 +1,18 @@
+P2 String XOR AND
+
+Step 1: START
+Step 2: Declare string = "Hello World"
+Step 3: Store len = length of string
+Step 4: XOR and AND each character of string with 127
+            For i from 0 to len - 1, do
+                xor_string[i] = string[i] ^ 127
+                and_string[i] = string[i] & 127
+            end for
+Step 5: Print the results
+            For i from 0 to len - 1, do
+                Print xor_string[i]
+            end for
+            For i from 0 to len - 1, do
+                Print and_string[i]
+            end for
+Step 6: STOP

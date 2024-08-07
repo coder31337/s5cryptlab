@@ -1,0 +1,14 @@
+P1 String XOR
+
+Step 1: START
+Step 2: Declare string = "hello world"
+Step 3: Store len = length of string
+Step 4: XOR each character of string with 0
+            For i from 0 to len - 1, do
+                xor_string[i] = string[i] ^ 0
+            end for
+Step 5: Print the result
+            For i from 0 to len - 1, do
+                Print xor_string[i]
+            end for
+Step 6: STOP

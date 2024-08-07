@@ -1,0 +1,22 @@
+P4 Vernam Cipher
+
+Step 1: START
+Step 2: Read the message
+Step 3: Convert message to plaintext by removing spaces
+        and making each character uppercase.
+Step 4: Set len = length of plaintext
+Step 5: XOR each character code of plaintext with a randomly 
+        generated key character.
+            For i from 0 to len - 1, do
+                pi = code of plaintext[i]
+                ki = random number between 0 and 25
+                ci = pi XOR ki
+                If ci > 25, then
+                    Set ci = ci - 26
+                end if
+                ciphertext[i] = character of ci
+                key[i] = character of ki
+            end for
+Step 6: Print the ciphertext
+Step 7: Print the key
+Step 8: STOP
