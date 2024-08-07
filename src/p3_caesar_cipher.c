@@ -4,18 +4,18 @@
 #define BUF 100
 
 int main() {
-    char input_string[BUF], plaintext[BUF], ciphertext[BUF];
+    char message[BUF], plaintext[BUF], ciphertext[BUF];
     int key, len, i;
 
-    printf("Enter a string: ");
-    fgets(input_string, BUF, stdin);
+    printf("Enter a message: ");
+    fgets(message, BUF, stdin);
     printf("Enter a key: ");
     scanf("%d", &key);
 
     len = 0;
-    for (i = 0; i < strlen(input_string) - 1; i++) {
-        if (isalpha(input_string[i]))
-            plaintext[len++] = (char)toupper(input_string[i]);
+    for (i = 0; i < strlen(message) - 1; i++) {
+        if (isalpha(message[i]))
+            plaintext[len++] = (char)toupper(message[i]);
     }
     plaintext[len] = '\0';
 
@@ -23,6 +23,6 @@ int main() {
         ciphertext[i] = (char)((plaintext[i] - 'A' + key) % 26) + 'A';
     ciphertext[len] = '\0';
 
-    printf("Cipher is %s\n", ciphertext);
+    printf("Ciphertext is %s\n", ciphertext);
     return 0;
 }
