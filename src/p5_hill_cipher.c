@@ -4,20 +4,21 @@
 #define BUF 100
 
 int main() {
-    char message[BUF], ki;
+    char key_string[BUF], message[BUF], ki;
     int key[3][3], pvector[3], cvector[3];
     int i, j, k;
 
     printf("Enter the key (9 chars): ");
+    fgets(key_string, BUF, stdin);
+    k = 0;
     for (i = 0; i < 3; i++) {
         for (j = 0; j < 3; j++) {
-            scanf("%c", &ki);
-            key[i][j] = toupper(ki) - 'A';
+            key[i][j] = toupper(key_string[k++]) - 'A';
         }
     }
 
     printf("Enter the message (3 chars): ");
-    scanf("%s", message);
+    fgets(message, BUF, stdin);
     for (i = 0; i < 3; i++)
         pvector[i] = toupper(message[i]) - 'A';
 
