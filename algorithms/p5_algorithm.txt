@@ -1,0 +1,29 @@
+P5 Hill Cipher
+
+Step 1: START
+Step 2: Read the 9 key characters for 3x3 key matrix to key_string.
+            k = 0
+            For i from 0 to 2, do
+                For j from 0 to 2, do
+                    key[i][j] = code of uppercase key_string[k]
+                    k = k + 1
+                end for
+            end for
+Step 3: Read the 3 message characters to message.
+            For i from 0 to 2, do
+                pvector[i] = code of uppercase message[i]
+            end for
+Step 4: Do matrix multiplication with key matrix and pvector.
+        Store the results to cvector.
+            For i from 0 to 2, do
+                cvector[i] = 0
+                For k from 0 to 2, do
+                    cvector[i] = cvector + key[i][k] * pvector[k]
+                end for
+                cvector[i] = cvector[i] % 26
+            end for
+Step 5: Print the ciphertext.
+            For i from 0 to 2, do
+                Print the character value of cvector[i]
+            end for
+Step 6: STOP
