@@ -7,20 +7,21 @@
 
 int main() {
     int key[MAX_SIZE][MAX_SIZE], pvector[MAX_SIZE], cvector[MAX_SIZE];
-    char message[BUF], plaintext[BUF], ciphertext[BUF], ki;
+    char key_string[BUF], message[BUF], plaintext[BUF], ciphertext[BUF], ki;
     int n, i, j, k, len, pad_len, c;
 
     printf("Enter the key matrix size: ");
     scanf("%d", &n);
+    getchar();
 
     printf("Enter the key (%d chars): ", n * n);
+    fgets(key_string, BUF, stdin);
+    k = 0;
     for (i = 0; i < n; i++) {
         for (j = 0; j < n; j++) {
-            scanf(" %c", &ki);
-            key[i][j] = toupper(ki) - 'A';
+            key[i][j] = toupper(key_string[k++]) - 'A';
         }
     }
-    getchar();
 
     printf("Enter message to encrypt: ");
     fgets(message, BUF, stdin);
