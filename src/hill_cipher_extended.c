@@ -32,7 +32,7 @@ int main() {
             plaintext[len++] = toupper(message[i]);
     }
     if (len % n != 0) {
-        pad_len = len % n;
+        pad_len = n - (len % n);
         for (i = len; i < len + pad_len; i++)
             plaintext[i] = 'X';
         len += pad_len;
