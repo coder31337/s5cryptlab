@@ -1,14 +1,18 @@
 P6 DES
 
 Step 1: START
-Step 2: Read the key string.
-Step 3: Convert the key string to a DES compatible key.
-     3.1: Convert key string to byte array.
-     3.2: Generate hash digest of the key bytes.
-     3.3: Generate DES key from first 8 bytes of digest.
-Step 4: Read the message and convert to byte array.
-Step 5: Generate ciphertext using message bytes and key using DES encryption.
-Step 6: Print ciphertext.
-Step 7: Generate plaintext from ciphertext and key using DES decryption.
-Step 8: Print plaintext.
-Step 9: STOP
+Step 2: Import required packages.
+Step 3: Read the key string.
+Step 4: Convert the key string to a DES compatible key.
+     4.1: Convert key string to byte array.
+     4.2: Generate hash digest of the key bytes using
+          MessageDigest.
+     4.3: Generate DES key from digest using SecretKeyFactory.
+Step 5: Read the message and convert to byte array.
+Step 6: Generate ciphertext using message bytes and key 
+        using DES encryption with Cipher in ENCRYPT_MODE.
+Step 7: Print ciphertext bytes.
+Step 8: Generate plaintext from ciphertext and key using
+        DES decryption with Cipher in DECRYPT_MODE.
+Step 9: Print plaintext.
+Step 10: STOP
