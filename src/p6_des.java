@@ -25,9 +25,11 @@ class DES {
             Cipher desCipher = Cipher.getInstance("DES");
             desCipher.init(Cipher.ENCRYPT_MODE, desKey);
             byte[] ciphertextBytes = desCipher.doFinal(messageBytes);
-            String ciphertext = new String(ciphertextBytes);
             System.out.println("\nAfter encryption");
-            System.out.println("Ciphertext is " + ciphertext);
+            System.out.print("Ciphertext is ");
+            for (byte ci: ciphertextBytes)
+                System.out.print(String.format("%x", ci));
+            System.out.println();
 
             desCipher.init(Cipher.DECRYPT_MODE, desKey);
             byte[] plaintextBytes = desCipher.doFinal(ciphertextBytes);

@@ -2,7 +2,7 @@ Enter a key: sourcoffee
 Enter a message: Meeting is at 7
 
 After encryption
-Ciphertext is D8H�V�X�z��ƿ��f
+Ciphertext is 443848a656a158ec7a97c8c6bffa9f66
 
 After decryption
 Plaintext is  Meeting is at 7
