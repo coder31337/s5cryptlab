@@ -1,0 +1,17 @@
+P7 Diffie Hellman
+
+Step 1: Start
+Step 2: Set values of modulus p and base g. g must be a primitive
+        root mod p.
+Step 3: Alice chooses secret key a.
+Step 4: Alice calculates her public key A as
+            A = g^a mod p
+Step 5: Bob chooses secret key b.
+Step 6: Bob calculates his public key B as
+            B = g^b mod p
+Step 7: Both public keys are exchanged.
+Step 8: Alice calculates the shared secret as
+            s = B^a mod p
+Step 9: Bob calculates the shared secret as
+            s = A^b mod p
+Step 10: STOP
