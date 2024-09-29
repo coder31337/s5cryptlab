@@ -1,0 +1,13 @@
+Let modulus p = 23 and base g = 5
+
+--- Alice ---
+Secret key is 5
+Public key is 20
+
+--- Bob ---
+Secret key is 3
+Public key is 10
+
+Shared secret as calculated by
+Alice = 19
+Bob = 19
