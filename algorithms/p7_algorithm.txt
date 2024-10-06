@@ -1,6 +1,6 @@
 P7 Diffie Hellman
 
-Step 1: Start
+Step 1: START
 Step 2: Set values of modulus p and base g. g must be a primitive
         root mod p.
 Step 3: Alice chooses secret key a.
