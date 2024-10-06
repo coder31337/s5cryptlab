@@ -26,7 +26,7 @@ int modular_exponentiation(int b, int e, int m) {
 }
 
 int main() {
-    int p, q, n, phi_n, e, d, m, ci, pi;
+    int p, q, n, phi_n, e, i, d, m, ci, pi;
 
     printf("Enter prime number p: ");
     scanf("%d", &p);
@@ -43,7 +43,7 @@ int main() {
 			break;
     }
     
-	for (int i = 1; i <= phi_n; i++) {
+	for (i = 1; i <= phi_n; i++) {
         if ((e * i) % phi_n == 1)
 			d = i;
     }
