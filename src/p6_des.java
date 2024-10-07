@@ -12,15 +12,15 @@ class DES {
 
             System.out.print("Enter a key: ");
             String key = scanner.nextLine();
-            byte[] keyBytes = key.getBytes("UTF8");
-            MessageDigest md = MessageDigest.getInstance("SHA-1");
+            byte[] keyBytes = key.getBytes();
+            MessageDigest md = MessageDigest.getInstance("MD5");
             byte[] keyHash = md.digest(keyBytes);
             SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("DES");
             SecretKey desKey = keyFactory.generateSecret(new DESKeySpec(keyHash));
 
             System.out.print("Enter a message: ");
             String message = scanner.nextLine();
-            byte[] messageBytes = message.getBytes("UTF8");
+            byte[] messageBytes = message.getBytes();
 
             Cipher desCipher = Cipher.getInstance("DES");
             desCipher.init(Cipher.ENCRYPT_MODE, desKey);
@@ -35,7 +35,7 @@ class DES {
             byte[] plaintextBytes = desCipher.doFinal(ciphertextBytes);
             String plaintext = new String(plaintextBytes);
             System.out.println("\nAfter decryption");
-            System.out.println("Plaintext is  " + plaintext);
+            System.out.println("Plaintext is " + plaintext);
 
         } catch (Exception e) {
             System.out.println("Error occurred");
