@@ -5,7 +5,7 @@ Step 2: Define gcd() function
      2.1: Input a, b
      2.2: While b != 0, do
               temp = b
-              b = a MOD B
+              b = a MOD b
               a = temp
           End while
      2.3: Return a
@@ -27,7 +27,7 @@ Step 7: Find the value of e
             While gcd(e, phi_n) != 1, do
                 e = random number from 2 to phi_n - 1
             End while
-Step 8: Find d such that (e * d) MOD phi_n == 1
+Step 8: Find d such that (e * d) MOD phi_n = 1
             For i from 1 to phi_n, do
                 If (e * i) MOD phi_n = 1, then
                     d = i
@@ -38,9 +38,9 @@ Step 10: Read the message as m
 Step 11: Find ciphertext as m^e MOD n using
          modular_exponentiation() function
              ci = modular_exponentiation(m, e, n)
-         Print ci
-Step 12: Find plaintext as ci^d MOD n using
+Step 12: Print ci as ciphertext
+Step 13: Find plaintext as ci^d MOD n using
          modular_exponentiation() function
              pi = modular_exponentiation(ci, d, n)
-         Print pi
-Step 13: STOP
+Step 14: Print pi as plaintext
+Step 15: STOP
