@@ -1,0 +1,8 @@
+Enter a key: sweetlime
+Enter a message: Job is done
+
+After encryption
+Ciphertext is 2cf945e5afc77eec379889e72e7cae8a
+
+After decryption
+Plaintext is Job is done
