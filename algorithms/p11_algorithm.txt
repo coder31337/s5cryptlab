@@ -1,0 +1,9 @@
+P11 Hashing
+
+Step 1: START
+Step 2: Import required packages.
+Step 3: Read message string.
+Step 4: Generate hash digest of the message bytes using
+        MessageDigest.
+Step 5: Print the generated hash digest.
+Step 6: STOP
