@@ -1,0 +1,2 @@
+Enter a message: Reward is waiting
+Hash is 3c3b8b794737ec72f93eb0941b2cc1add599f41cb3fe0c56190eaa1fd3bd71
