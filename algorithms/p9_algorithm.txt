@@ -3,7 +3,7 @@ P9 RC4
 Step 1: START
 Step 2: Define KSA() function
             For i from 0 to 255, do
-                S[i] := i
+                S[i] = i
             endfor
             j = 0
             For i from 0 to 255, do
@@ -15,10 +15,10 @@ Step 3: Define PRGA() function
             j = 0
             len = length of input
             For n from 0 to len - 1, do
-                i = (i + 1) mod 256
-                j = (j + S[i]) mod 256
+                i = (i + 1) MOD 256
+                j = (j + S[i]) MOD 256
                 swap values of S[i] and S[j]
-                r = S[(S[i] + S[j]) mod 256]
+                r = S[(S[i] + S[j]) MOD 256]
                 output[n] = r XOR input[n]
             endfor
 Step 4: Create S[] array with size 256
