@@ -17,16 +17,16 @@ int KSA(char *key, unsigned char *S) {
     
     j = 0;
     len = strlen(key);
-    for (int i = 0; i < 256; i++) {
+    for (i = 0; i < 256; i++) {
         j = (j + S[i] + key[i % len]) % 256;
         swap(&S[i], &S[j]);
     }
     return 0;
 }
 
-void PRGA(unsigned char *S, char *input, unsigned char *output) {
+void PRGA(unsigned char *S, unsigned char *input, unsigned char *output) {
     int n, i, j, len;
-    unsigned char rand_byte;
+    unsigned char r;
 
     i = 0;
     j = 0;
@@ -36,9 +36,9 @@ void PRGA(unsigned char *S, char *input, unsigned char *output) {
         j = (j + S[i]) % 256;
 
         swap(&S[i], &S[j]);
-        rand_byte = S[(S[i] + S[j]) % 256];
+        r = S[(S[i] + S[j]) % 256];
 
-        output[n] = rand_byte ^ input[n];
+        output[n] = r ^ input[n];
     }
     output[len] = '\0';
 }
