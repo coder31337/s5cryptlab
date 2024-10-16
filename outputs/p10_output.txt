@@ -1,6 +1,8 @@
 Enter key: secret123
 Enter message: Timer set
+
 After encryption
 Ciphertext is 59687f4aabf8fa5054
+
 After decryption
 Plaintext is Timer set

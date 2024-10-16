@@ -59,7 +59,7 @@ int main() {
 
     KSA(key, S);
     PRGA(S, message, ciphertext);
-    printf("After encryption\n");
+    printf("\nAfter encryption\n");
     printf("Ciphertext is ");
     for (i = 0; i < strlen(message); i++)
         printf("%x", ciphertext[i]);
@@ -67,7 +67,7 @@ int main() {
 
     KSA(key, S);
     PRGA(S, ciphertext, plaintext);
-    printf("After decryption\n");
+    printf("\nAfter decryption\n");
     printf("Plaintext is %s\n", plaintext);
 
     return 0;
