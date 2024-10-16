@@ -1,18 +1,31 @@
-P10 Blowfish
+P10 RC4
 
 Step 1: START
-Step 2: Import required packages.
-Step 3: Read the key string.
-Step 4: Convert the key string to a Blowfish compatible key.
-     4.1: Convert key string to byte array.
-     4.2: Generate hash digest of the key bytes using
-          MessageDigest.
-     4.3: Generate Blowfish key from digest using SecretKeySpec.
-Step 5: Read the message and convert to byte array.
-Step 6: Generate ciphertext using message bytes and key 
-        using Blowfish encryption with Cipher in ENCRYPT_MODE.
-Step 7: Print ciphertext bytes.
-Step 8: Generate plaintext from ciphertext and key using
-        Blowfish decryption with Cipher in DECRYPT_MODE.
-Step 9: Print plaintext.
-Step 10: STOP
+Step 2: Define KSA() function
+            For i from 0 to 255, do
+                S[i] = i
+            endfor
+            j = 0
+            For i from 0 to 255, do
+                j = (j + S[i] + key[i MOD keylength]) MOD 256
+                swap values of S[i] and S[j]
+            endfor
+Step 3: Define PRGA() function
+            i = 0
+            j = 0
+            len = length of input
+            For n from 0 to len - 1, do
+                i = (i + 1) MOD 256
+                j = (j + S[i]) MOD 256
+                swap values of S[i] and S[j]
+                r = S[(S[i] + S[j]) MOD 256]
+                output[n] = r XOR input[n]
+            endfor
+Step 4: Create S[] array with size 256
+Step 5: Read the key
+Step 6: Read the message
+Step 7: Encrypt message using KSA and PRGA functions
+Step 8: Print the ciphertext
+Step 9: Decrypt message using KSA and PRGA functions
+Step 10: Print the plaintext
+Step 11: STOP

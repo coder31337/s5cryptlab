@@ -1,10 +1,13 @@
-Enter prime number p: 3
-Enter prime number q: 11
-n = 33
-e = 3
-d = 7
-Enter message (< 33): 14
-After encryption
-Ciphertext is 5
-After decryption
-Plaintext is 14
+Let modulus p = 23 and base g = 5
+
+--- Alice ---
+Secret key is 5
+Public key is 20
+
+--- Bob ---
+Secret key is 3
+Public key is 10
+
+Shared secret as calculated by
+Alice = 19
+Bob = 19

@@ -1,17 +1,46 @@
-P7 Diffie Hellman
+P7 RSA
 
 Step 1: START
-Step 2: Set values of modulus p and base g. g must be a primitive
-        root mod p.
-Step 3: Alice chooses secret key a.
-Step 4: Alice calculates her public key A as
-            A = g^a mod p
-Step 5: Bob chooses secret key b.
-Step 6: Bob calculates his public key B as
-            B = g^b mod p
-Step 7: Both public keys are exchanged.
-Step 8: Alice calculates the shared secret as
-            s = B^a mod p
-Step 9: Bob calculates the shared secret as
-            s = A^b mod p
-Step 10: STOP
+Step 2: Define gcd() function
+     2.1: Input a, b
+     2.2: While b != 0, do
+              temp = b
+              b = a MOD b
+              a = temp
+          End while
+     2.3: Return a
+Step 3: Define modular_exponentiation() function
+     3.1: Input b, e, m
+     3.2: b = b MOD m
+     3.3: While e > 0, do
+              If e MOD 2 = 1, then
+                  result = (result * b) MOD m
+              End if
+              b = (b * b) MOD m
+              e = e / 2
+          End while
+     3.4: Return result
+Step 4: Read prime numbers p and q
+Step 5: Calculate n as p * q
+Step 6: Calculate phi_n as (p - 1) * (q - 1)
+Step 7: Find the value of e
+            While gcd(e, phi_n) != 1, do
+                e = random number from 2 to phi_n - 1
+            End while
+Step 8: Find d such that (e * d) MOD phi_n = 1
+            For i from 1 to phi_n, do
+                If (e * i) MOD phi_n = 1, then
+                    d = i
+                End if
+            End for
+Step 9: Print the values of n, e and d
+Step 10: Read the message as m
+Step 11: Find ciphertext as m^e MOD n using
+         modular_exponentiation() function
+             ci = modular_exponentiation(m, e, n)
+Step 12: Print ci as ciphertext
+Step 13: Find plaintext as ci^d MOD n using
+         modular_exponentiation() function
+             pi = modular_exponentiation(ci, d, n)
+Step 14: Print pi as plaintext
+Step 15: STOP

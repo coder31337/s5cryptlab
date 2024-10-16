@@ -1,8 +1,6 @@
-Enter a key: sweetlime
-Enter a message: Job is done
-
+Enter key: secret123
+Enter message: Timer set
 After encryption
-Ciphertext is 2cf945e5afc77eec379889e72e7cae8a
-
+Ciphertext is 59687f4aabf8fa5054
 After decryption
-Plaintext is Job is done
+Plaintext is Timer set
