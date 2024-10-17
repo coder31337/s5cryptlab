@@ -26,6 +26,6 @@ Step 5: Read the key
 Step 6: Read the message
 Step 7: Encrypt message using KSA and PRGA functions
 Step 8: Print the ciphertext
-Step 9: Decrypt message using KSA and PRGA functions
+Step 9: Decrypt ciphertext using KSA and PRGA functions
 Step 10: Print the plaintext
 Step 11: STOP
