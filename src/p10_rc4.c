@@ -9,7 +9,7 @@ void swap(unsigned char *a, unsigned char *b) {
     *b = temp;
 }
 
-int KSA(char *key, unsigned char *S) {
+void KSA(char *key, unsigned char *S) {
     int i, j, len;
 
     for (i = 0; i < 256; i++)
@@ -21,7 +21,6 @@ int KSA(char *key, unsigned char *S) {
         j = (j + S[i] + key[i % len]) % 256;
         swap(&S[i], &S[j]);
     }
-    return 0;
 }
 
 void PRGA(unsigned char *S, unsigned char *input, unsigned char *output) {
