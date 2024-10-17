@@ -46,7 +46,7 @@ void PRGA(unsigned char *S, unsigned char *input, unsigned char *output) {
 int main() {
     char key[BUF], message[BUF], plaintext[BUF];
     unsigned char S[256], ciphertext[BUF];
-    int i;
+    int i, len;
 
     printf("Enter key: ");
     fgets(key, BUF, stdin);
@@ -55,12 +55,13 @@ int main() {
     printf("Enter message: ");
     fgets(message, BUF, stdin);
     message[strlen(message) - 1] = '\0';
+    len = strlen(message);
 
     KSA(key, S);
     PRGA(S, message, ciphertext);
     printf("\nAfter encryption\n");
     printf("Ciphertext is ");
-    for (i = 0; i < strlen(message); i++)
+    for (i = 0; i < len; i++)
         printf("%x", ciphertext[i]);
     printf("\n");
 
