@@ -25,7 +25,7 @@ class Blowfish {
             System.out.println("\nAfter encryption");
             System.out.print("Ciphertext is ");
             for (byte ci: ciphertextBytes)
-                System.out.print(String.format("%x", ci));
+                System.out.print(String.format("%02x", ci));
             System.out.println();
 
             cipher.init(Cipher.DECRYPT_MODE, blowfishKey);

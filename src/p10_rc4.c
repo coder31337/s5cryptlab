@@ -62,7 +62,7 @@ int main() {
     printf("\nAfter encryption\n");
     printf("Ciphertext is ");
     for (i = 0; i < len; i++)
-        printf("%x", ciphertext[i]);
+        printf("%02x", ciphertext[i]);
     printf("\n");
 
     KSA(key, S);

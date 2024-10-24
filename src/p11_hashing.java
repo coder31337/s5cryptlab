@@ -12,7 +12,7 @@ class Hashing {
             byte[] hash = md.digest(message.getBytes());
             System.out.print("Hash is ");
             for (byte b: hash)
-                System.out.print(String.format("%x", b));
+                System.out.print(String.format("%02x", b));
             System.out.println();
 
         } catch (Exception e) {
