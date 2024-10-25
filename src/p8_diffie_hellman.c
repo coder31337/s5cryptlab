@@ -1,9 +1,12 @@
 #include <stdio.h>
 
-unsigned long long power(int x, int y) {
-    if (y == 0)
-        return 1;
-    return x * power(x, y - 1);
+int power_mod(int b, int e, int m) {
+    int i, result;
+
+    result = 1;
+    for (i = 0; i < e; i++)
+        result = (result * b) % m;
+    return result;
 }
 
 int main() {
@@ -15,20 +18,20 @@ int main() {
 
     printf("\n--- Alice ---\n");
     a = 5;
-    A = power(g, a) % p;
+    A = power_mod(g, a, p);
     printf("Secret key is %d\n", a);
     printf("Public key is %d\n", A);
 
     printf("\n--- Bob ---\n");
     b = 3;
-    B = power(g, b) % p;
+    B = power_mod(g, b, p);
     printf("Secret key is %d\n", b);
     printf("Public key is %d\n", B);
 
     printf("\nShared secret as calculated by\n");
-    s_a = power(B, a) % p;
+    s_a = power_mod(B, a, p);
     printf("Alice = %d\n", s_a);
-    s_b = power(A, b) % p;
+    s_b = power_mod(A, b, p);
     printf("Bob = %d\n", s_b);
 
     return 0;

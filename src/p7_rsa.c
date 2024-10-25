@@ -12,15 +12,12 @@ int gcd(int a, int b) {
     return a;
 }
 
-int modular_exponentiation(int b, int e, int m) {
-    int result = 1;
-	b = b % m;
-    while (e > 0) {
-        if (e % 2 == 1)
-            result = (result * b) % m;
-        b = (b * b) % m;
-        e /= 2;
-    }
+int power_mod(int b, int e, int m) {
+    int i, result;
+
+    result = 1;
+    for (i = 0; i < e; i++)
+        result = (result * b) % m;
     return result;
 }
 
@@ -55,11 +52,11 @@ int main() {
     scanf("%d", &m);
 
     printf("After encryption\n");
-    ci = modular_exponentiation(m, e, n);
+    ci = power_mod(m, e, n);
     printf("Ciphertext is %d\n", ci);
 
     printf("After decryption\n");
-    pi = modular_exponentiation(ci, d, n);
+    pi = power_mod(ci, d, n);
     printf("Plaintext is %d\n", pi);
 
     return 0;
