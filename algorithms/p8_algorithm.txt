@@ -1,17 +1,43 @@
 P8 Diffie Hellman
 
 Step 1: START
-Step 2: Set values of modulus p and base g. g must be a primitive
-        root mod p.
-Step 3: Alice chooses secret key a.
-Step 4: Alice calculates her public key A as
-            A = g^a mod p
-Step 5: Bob chooses secret key b.
-Step 6: Bob calculates his public key B as
-            B = g^b mod p
-Step 7: Both public keys are exchanged.
-Step 8: Alice calculates the shared secret as
-            s = B^a mod p
-Step 9: Bob calculates the shared secret as
-            s = A^b mod p
-Step 10: STOP
+Step 2: Read the value of prime modulus p. Check if entered
+        value is prime
+            If p <= 1, then
+                p is not prime
+                Go to step 11
+            Else
+                For i from 2 to sqrt(n), do
+                    If p MOD i = 0, then
+                        p is not prime
+                        Go to step 11
+                End for
+                p is prime
+Step 3: Find the base g as primitive root modulo p
+            For g from 2 to p - 1, do
+                flag = 1
+                For i from 1 to p - 2, do
+                    If g^i MOD p = 1, then
+                        flag = 0
+                        break
+                    End if
+                End for
+                If flag = 1, then
+                    g is the required primitive root
+                    Go to step 4
+                End if
+            End for
+            g not available for p
+            Go to step 11
+Step 4: Alice chooses random secret key a in the range 1 to p - 2
+Step 5: Alice calculates her public key A as
+            A = g^a MOD p
+Step 6: Bob chooses random secret key b in the range 1 to p - 2
+Step 7: Bob calculates his public key B as
+            B = g^b MOD p
+Step 8: Both public keys are exchanged.
+Step 9: Alice calculates the shared secret as
+            s = B^a MOD p
+Step 10: Bob calculates the shared secret as
+            s = A^b MOD p
+Step 11: STOP

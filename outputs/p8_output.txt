@@ -1,13 +1,14 @@
-Let modulus p = 23 and base g = 5
+Enter a prime modulus p: 97
+Using base g = 5
 
 --- Alice ---
-Secret key is 5
-Public key is 20
+Secret key is 20
+Public key is 93
 
 --- Bob ---
-Secret key is 3
-Public key is 10
+Secret key is 19
+Public key is 38
 
 Shared secret as calculated by
-Alice = 19
-Bob = 19
+Alice = 88
+Bob = 88
