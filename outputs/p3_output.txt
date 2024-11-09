@@ -1,3 +1,3 @@
-Enter a message: Hello there
+Enter a message: Meet at 09:45 tomorrow
 Enter a key: 4
-Ciphertext is LIPPSXLIVI
+Ciphertext is QIIX EX 09:45 XSQSVVSA

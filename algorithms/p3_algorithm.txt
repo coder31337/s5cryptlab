@@ -3,15 +3,17 @@ P3 Caesar Cipher
 Step 1: START
 Step 2: Read the message
 Step 3: Read the key
-Step 4: Convert message to plaintext by removing spaces
-        and making each character uppercase.
-Step 5: Set len = length of plaintext
-Step 6: Do modular addition using key and each character code
-        of plaintext.
+Step 4: Set len = length of message
+Step 5: Do modular addition using key and character code for
+        every alphabet character of message.
             For i from 0 to len - 1, do
-                pi = code of plaintext[i]
-                ci = (pi + key) % 26
-                ciphertext[i] = character of ci
+                If message[i] is an alphabet, then
+                    pi = code of message[i]
+                    ci = (pi + key) % 26
+                    ciphertext[i] = character of ci
+                Else
+                    ciphertext[i] = message[i]
+                end if
             end for
-Step 7: Print the ciphertext
-Step 8: STOP
+Step 6: Print the ciphertext
+Step 7: STOP
